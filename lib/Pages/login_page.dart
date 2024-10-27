@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           headerText(),
           loginForm(),
-          createAnAccountLink()
+          ForgetPassword()
         ],
       ),
       )
@@ -116,29 +116,13 @@ Widget headerText(){
       style: TextStyle(
         color: Colors.white,
       ),),
-    )
+    ),
     );
   }
-
-  Widget createAnAccountLink(){
-    return  Expanded(
-      child:Row(
-        mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Text('Don\'t Have a Account?',),
-          GestureDetector(
-            onTap: (){
-              navigationService.pushNamed("/register");
-            },
-            child: Text('Sign Up',
-            style: TextStyle(
-              fontWeight: FontWeight.w800
-            ),),
-          )
-        ],
-      ) 
+  Widget ForgetPassword(){
+    return SizedBox(
+      width: MediaQuery.sizeOf(context).width,
+      child: TextButton(onPressed: (){}, child: Text('Forget Password')),
     );
   }
 }
