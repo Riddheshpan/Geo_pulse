@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "989536768950",
+    "project_id": "geo-pulse-9552a",
+    "storage_bucket": "geo-pulse-9552a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:989536768950:android:821a541d16af024a516717",
+        "android_client_info": {
+          "package_name": "com.example.geo_pulse"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYddIB5DxUeoJ3gyDMSaxlKCRAOQB2bsM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
