@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geo_pulse/Pages/Profile_Page.dart';
 import 'package:geo_pulse/Service/Alert_Service.dart';
 import 'package:geo_pulse/Service/Auth_Services.dart';
 import 'package:geo_pulse/Service/Navigation_Services.dart';
@@ -28,13 +29,11 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Home page"),
-        actions: [IconButton(onPressed: ()async{
-          bool result =await authService.logout();
-          if (result) {
-            alertService.ShowToast(text: "Succesfully loged out",icon: Icons.check);
-            navigationService.pushReplacementNamed("/login");
-          }
-        }, icon: Icon(Icons.logout_outlined))],
+        actions: [ElevatedButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+              },
+              child: Text('Profile Page'),)],
       ),
     );
   }
