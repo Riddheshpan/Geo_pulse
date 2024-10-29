@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geo_pulse/Pages/EditProfilePage.dart';
 import 'package:geo_pulse/Pages/Home_page.dart';
 import 'package:geo_pulse/Pages/login_page.dart';
 
@@ -8,6 +9,7 @@ class NavigationService {
   final Map<String, Widget Function(BuildContext)> routes={
     "/login":(context)=>LoginPage(),
     "/home":(context)=>Homepage(),
+    "/edit_profile":(context)=>Editprofilepage(),
   };
 
   GlobalKey<NavigatorState>? get navigatorKey{

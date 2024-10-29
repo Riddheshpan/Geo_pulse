@@ -83,7 +83,6 @@ class _ProfilePageState extends State<ProfilePage> {
                 imageUrl: selectedImage != null ? selectedImage!.path : PLACEHOLDER_PFP,
                 onEdit: pickImage,
               ),
-              // Other widgets...
             ],
           ),
         ),

@@ -14,6 +14,17 @@ class Editprofilepage extends StatefulWidget {
 class _EditprofilepageState extends State<Editprofilepage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Edit Profile'),
+      ),
+      body: ,
+    );
   }
+}
+
+Widget pfpSelectionField(){
+  return CircleAvatar(
+    radius: 
+  )
 }
