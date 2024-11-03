@@ -1,39 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:geo_pulse/Service/Auth_Services.dart';
-import 'package:geo_pulse/Service/Navigation_Services.dart';
-import 'package:geo_pulse/Utility.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:geo_pulse/Frontend/Components/Media_Service.dart';
+import 'package:geo_pulse/Frontend/Employee%20Pages/my_home_page.dart';
 import 'package:get_it/get_it.dart';
+import 'firebase_options.dart';
 
 void main() async {
-    
-  await setup();
-  runApp( MyApp());
-}
-
-Future<void>setup() async{
   WidgetsFlutterBinding.ensureInitialized();
-  await setupFirebase();
-  await registerServices();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  final GetIt getIt=GetIt.instance;
+  getIt.registerSingleton<MediaService>(MediaService());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-  final GetIt getIt=GetIt.instance;
-
-  late NavigationService navigationnService;
-  late AuthService authService;
-  MyApp({super.key}){
-    navigationnService=getIt.get<NavigationService>();
-    authService = getIt.get<AuthService>();
-  }
-  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      navigatorKey: navigationnService.navigatorKey,
-      debugShowCheckedModeBanner: false,
-      initialRoute:authService.user!=null?"/home": "/login",
-      routes: navigationnService.route,
+      title: "Geo locator",
+      home: HomePage(),
     );
   }
 }
