@@ -22,58 +22,60 @@ class _CheckinFormState extends State<CheckinForm> {
       appBar: AppBar(
         title: Text("Chekin form"),
       ),
-      body:Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 15.0,
-          vertical: 20.0,
-          ),
-        child: Column(
-          children: [
-            DateInputField(),
-            SizedBox(
-              height: 20,
+      body:SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: 15.0,
+            vertical: 20.0,
             ),
-            TimeInputField(title: 'Select Checkin Time',),
-            SizedBox(
-              height: 20,
-            ),
-            TextField(
-              maxLines: 3,
-              decoration: InputDecoration(
-                hintText: 'Location',
-                border: OutlineInputBorder(),
+          child: Column(
+            children: [
+              DateInputField(),
+              SizedBox(
+                height: 20,
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              children: [Expanded(child: Container()),
-                ElevatedButton(
-                  style: ButtonStyle(
-                    
-                  ),
-                  onPressed: (){}, 
-                  child: Text("Get Location")),
-              ],
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            SizedBox(
-              width: MediaQuery.sizeOf(context).width,
-              child: MaterialButton(
-                onPressed: widget.onSubmit, 
-                child: Text('Submit',style: TextStyle(
-                  color: Colors.white
-                ),),
-                color: Colors.blue,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5),
+              TimeInputField(title: 'Select Checkin Time',),
+              SizedBox(
+                height: 20,
+              ),
+              TextField(
+                maxLines: 3,
+                decoration: InputDecoration(
+                  hintText: 'Location',
+                  border: OutlineInputBorder(),
                 ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [Expanded(child: Container()),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      
+                    ),
+                    onPressed: (){}, 
+                    child: Text("Get Location")),
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              SizedBox(
+                width: MediaQuery.sizeOf(context).width,
+                child: MaterialButton(
+                  onPressed: widget.onSubmit, 
+                  child: Text('Submit',style: TextStyle(
+                    color: Colors.white
+                  ),),
+                  color: Colors.blue,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                )
               )
-            )
-          ],
+            ],
+          ),
         ),
       ) ,
     );
